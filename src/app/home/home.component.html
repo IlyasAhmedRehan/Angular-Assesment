@@ -1,0 +1,26 @@
+<!-- <input type="text" (change)="getData()" [(ngModel)]="query" /> -->
+<div class="mb-5">
+  <div class="d-flex justify-content-between searchBar">
+    <h1 class="mb-5">New Movies List</h1>
+    <div class="searchInputWrapper mr-2">
+      <input class="searchInput" type="text" placeholder='focus here to search' (change)="getData()"
+        [(ngModel)]="query" />
+      <i class="searchInputIcon fa fa-search"></i>
+    </div>
+  </div>
+  <div class="movies-details">
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let movies of searchResults">
+        <div class="box">
+          <img src="{{imageBasePath}}{{movies.poster_path}}" alt="">
+          <div class="descp p-3">
+            <h5>{{movies.title}}</h5>
+            <p class="m_date">{{movies.release_date}}</p>
+            <p class="m_descp">{{movies.overview}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
